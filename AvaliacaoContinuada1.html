@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="max-width: 500px; margin:auto;">
+    </style>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaRvmCWc2P4-R55jIdHrhHEP4BY3ACJ3--ZxSuQ2qulkN3NAjQE__hJIzqkwMrG2syZdw&usqp=CAU"
+        style="margin-top: 10px; height: 150px; width: 150px;">
+    <br>
+    <h3><b>"Gestoque! Guarde bem o que esta contigo!"</b></h3>
+    <div>
+        <input id="nome" placeholder="nome">
+        <input id="unidade" placeholder="Unidades">
+        <br><br>
+        <input id="qnt_estoque" placeholder="Quantidade em Estoque">
+        <input id="val_compra" placeholder="Valor por Unidade">
+        <input id="val_venda" placeholder="Venda por Unidade">
+        <br><br>
+
+
+        <button onclick="analise()">Analisar Estoque</button>
+    </div>
+
+    <div id="analise_val">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    function analise() {
+        var lucro = (((val_venda.value / val_compra.value) - 1) * 100);
+        analise_val.innerHTML += `<img src="https://media.tenor.com/images/bb3cf989f0523bbc097377be58e7bbd5/tenor.gif"
+        style="margin-top: 10px; height: 150px; width: 150px;"><br>`;
+
+        analise_val.innerHTML += `<span style="color: blue;"><b>Você possui um total de ${Number(qnt_estoque.value) + Number(unidade.value)} 
+        de ${nome.value}  em estoque.</b></span>`;
+        analise_val.innerHTML += `<span style="color: blue;"><b>Voce tem um total de R$ ${val_venda.value * qnt_estoque.value} em estoque de ${nome.value}</b></span><br>
+
+
+        <span style="color: darkgreen;"><b>Como comprou cada unidade por R$ ${Number(val_compra.value)} e vai vender por ${val_venda.value}
+        </b></span><br> 
+
+        <span style="color: darkgreen;"><b>Sua margem de lucro será ${lucro}</b></span><br>`;
+
+
+        analise_val.innerHTML += `<span style="color: blue;"><b>Vai lucrar R$ ${val_venda.value - val_compra.value} 
+        em cada ${nome.value} vendido.
+        </b></span><br>`;
+        analise_val.innerHTML += `<div style="background-color: red; height: 30px; width: 30%;">compra</div>
+                                  <div style="background-color: green; height: 30px; width: 40%;">venda</div>
+                                  <h2><b>Composição de Preços</b><h2>`;
+
+//Super agradecimento ao Professor Frizzar por no dia 01-03-2021 Ter disponibilizado do seu tempo e ter ficado disponivel até 7pm para poder tirar todas minhas duvidas!
+//Espero que eu tenha atingido o resultado esperado. Obrigado!!!
+    }
+</script>
