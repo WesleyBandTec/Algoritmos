@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuzDia</title>
+</head>
+<body>
+    <h3>Luz Dia - Economia </h3>
+    Informe quantidade de Lampadas:
+    <input id="qt_lamp" placeholder="Num de lampadas"> <br>
+    Informe o Valor da conta de luz:
+    <input id="val_luz" placeholder="Conta Elétrica"> <br><br>
+
+
+    <button onclick="calcular()"> Calcular a Economia </button> <br><br>
+
+    <b id="div_msg"></b>
+     
+
+</body>
+</html>
+
+<script>
+    function calcular() {
+        var invest = qt_lamp.value * 20;
+        var econom = val_luz.value * 0.1;
+        var retorn = invest / econom;
+
+        div_msg.innerHTML += `O Seu investimento em lampadas será de R$ ${invest}<br>`;
+
+        div_msg.innerHTML += `A sua economia será de R$ ${econom}<br>`;
+
+        div_msg.innerHTML += `portanto em ${retorn} meses o seu investimento será retornado.<br>`;
+    }
+
+
+</script>
+
